@@ -8,7 +8,7 @@ Tests::Tests(){
 	failed = 0;
 }
 
-//Òåñò äåñòðóêòîðà
+//Ã’Ã¥Ã±Ã² Ã¤Ã¥Ã±Ã²Ã°Ã³ÃªÃ²Ã®Ã°Ã 
 
 bool Tests::test_destruct() { 
 	Goods* good = new Goods("AAA", 1, 1, 1970, 0, 0);
@@ -27,10 +27,10 @@ bool Tests::test_destruct() {
 	}
 }
 
-//Òåñò íà ñðàâíåíèå èìåíè
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã±Ã°Ã Ã¢Ã­Ã¥Ã­Ã¨Ã¥ Ã¨Ã¬Ã¥Ã­Ã¨
 
 bool Tests::test_name(Goods* test_good) { 
-	test_good->setName("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+	test_good->setName("Apple");
 	const char* expect = "Apple";
 	const char* real;
 	real = test_good->getName();
@@ -46,7 +46,7 @@ bool Tests::test_name(Goods* test_good) {
 	}
 }
 
-//Òåñò íà ñðàâíåíèå äàòû
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã±Ã°Ã Ã¢Ã­Ã¥Ã­Ã¨Ã¥ Ã¤Ã Ã²Ã»
 
 bool Tests::test_date(Goods* test_good) { 
 	test_good->setDate(0,0,0);
@@ -67,9 +67,9 @@ bool Tests::test_date(Goods* test_good) {
 	}
 }
 
-//Òåñò íà ïîâûøåíèå ñòîèìîñòè òîâàðà
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã¯Ã®Ã¢Ã»Ã¸Ã¥Ã­Ã¨Ã¥ Ã±Ã²Ã®Ã¨Ã¬Ã®Ã±Ã²Ã¨ Ã²Ã®Ã¢Ã Ã°Ã 
 
-bool Tests::test_markup(Goods* test_good) { //Òåñòèðóåì çàãðóçêè äåíåã â àâòîìàò
+bool Tests::test_markup(Goods* test_good) { //Ã’Ã¥Ã±Ã²Ã¨Ã°Ã³Ã¥Ã¬ Ã§Ã Ã£Ã°Ã³Ã§ÃªÃ¨ Ã¤Ã¥Ã­Ã¥Ã£ Ã¢ Ã Ã¢Ã²Ã®Ã¬Ã Ã²
 	test_good->setCost(10.0);
 	test_good->setMarkup(5.0);
 
@@ -86,7 +86,7 @@ bool Tests::test_markup(Goods* test_good) { //Òåñòèðóåì çàãðóçêè äåíåã â àâòîìàò
 	}
 }
 
-//Òåñò íà ïîíèæåíèå ñòîèìîñòè òîâàðà
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã¯Ã®Ã­Ã¨Ã¦Ã¥Ã­Ã¨Ã¥ Ã±Ã²Ã®Ã¨Ã¬Ã®Ã±Ã²Ã¨ Ã²Ã®Ã¢Ã Ã°Ã 
 
 bool Tests::test_markdown(Goods* test_good) { 
 	test_good->setCost(10.0);
@@ -104,7 +104,7 @@ bool Tests::test_markdown(Goods* test_good) {
 	}
 }
 
-//òåñò íà óâåëè÷åíèå êîëè÷åñòâà òîâàðà
+//Ã²Ã¥Ã±Ã² Ã­Ã  Ã³Ã¢Ã¥Ã«Ã¨Ã·Ã¥Ã­Ã¨Ã¥ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã  Ã²Ã®Ã¢Ã Ã°Ã 
 
 bool Tests::test_receive(Goods* test_good) {
 	test_good->setAmount(100);
@@ -122,7 +122,7 @@ bool Tests::test_receive(Goods* test_good) {
 	}
 }
 
-//òåñò íà óìåíüøåíèå êîëè÷åñòâà òîâàðà
+//Ã²Ã¥Ã±Ã² Ã­Ã  Ã³Ã¬Ã¥Ã­Ã¼Ã¸Ã¥Ã­Ã¨Ã¥ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã  Ã²Ã®Ã¢Ã Ã°Ã 
 
 bool Tests::test_sell(Goods* test_good) {
 	test_good->setAmount(100);
@@ -140,7 +140,7 @@ bool Tests::test_sell(Goods* test_good) {
 	}
 }
 
-//òåñò íà óìåíüøåíèå êîëè÷åñòâà òîâàðà (ñ èñïîëüçîâàíèåì êîíñòàíòû)
+//Ã²Ã¥Ã±Ã² Ã­Ã  Ã³Ã¬Ã¥Ã­Ã¼Ã¸Ã¥Ã­Ã¨Ã¥ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã  Ã²Ã®Ã¢Ã Ã°Ã  (Ã± Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã­Ã¨Ã¥Ã¬ ÃªÃ®Ã­Ã±Ã²Ã Ã­Ã²Ã»)
 
 bool Tests::test_oversell(Goods* test_good) {
 	int expect = 100;
@@ -160,7 +160,7 @@ bool Tests::test_oversell(Goods* test_good) {
 }
 
 
-//Òåñò íà ïðîöåíòíóþ íàöåíêó òîâàðà
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã¯Ã°Ã®Ã¶Ã¥Ã­Ã²Ã­Ã³Ã¾ Ã­Ã Ã¶Ã¥Ã­ÃªÃ³ Ã²Ã®Ã¢Ã Ã°Ã 
 
 bool Tests::test_percentage(Goods* test_good) {
 	test_good->setCost(10.0);
@@ -178,7 +178,7 @@ bool Tests::test_percentage(Goods* test_good) {
 	}
 }
 
-//Òåñò íà ñòðîêîâîå ïðåäñòàâëåíèå òîâàðà
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã±Ã²Ã°Ã®ÃªÃ®Ã¢Ã®Ã¥ Ã¯Ã°Ã¥Ã¤Ã±Ã²Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã²Ã®Ã¢Ã Ã°Ã 
 
 bool Tests::test_string(Goods* test_good) {
 	test_good->setName("Orange");
@@ -199,7 +199,7 @@ bool Tests::test_string(Goods* test_good) {
 		return false;
 	}
 }
-//Òåñò íà ïåðåãðóçêó äîáàâëåíèÿ òîâàðîâ
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã¯Ã¥Ã°Ã¥Ã£Ã°Ã³Ã§ÃªÃ³ Ã¤Ã®Ã¡Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¿ Ã²Ã®Ã¢Ã Ã°Ã®Ã¢
 
 bool Tests::overload_plus_amount(Goods* test_good){
 	int amount = 10;
@@ -216,7 +216,7 @@ bool Tests::overload_plus_amount(Goods* test_good){
 		return false;
 	}
 }
-//Òåñò íà ïåðåãðóçêó óìåíüøåíèÿ êîëè÷åñòâà òîâàðîâ
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã¯Ã¥Ã°Ã¥Ã£Ã°Ã³Ã§ÃªÃ³ Ã³Ã¬Ã¥Ã­Ã¼Ã¸Ã¥Ã­Ã¨Ã¿ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã  Ã²Ã®Ã¢Ã Ã°Ã®Ã¢
 
 bool Tests::overload_minus_amount(Goods* test_good){
 	int amount = 10;
@@ -234,7 +234,7 @@ bool Tests::overload_minus_amount(Goods* test_good){
 	}
 }
 
-//Òåñò íà ïðèâåäåíèå ê òèïó double
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã¯Ã°Ã¨Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¥ Ãª Ã²Ã¨Ã¯Ã³ double
 
 bool Tests::overload_double_cost(Goods* test_good){
 	int cost = 10;
@@ -251,7 +251,7 @@ bool Tests::overload_double_cost(Goods* test_good){
 	}
 }
 
-//Òåñò íà ïåðåãðóçêó èíêðåìåíòà 
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã¯Ã¥Ã°Ã¥Ã£Ã°Ã³Ã§ÃªÃ³ Ã¨Ã­ÃªÃ°Ã¥Ã¬Ã¥Ã­Ã²Ã  
 
 bool Tests::overload_increment_date(Goods* test_good){
 	test_good->setDate(25,5,2001);
@@ -269,7 +269,7 @@ bool Tests::overload_increment_date(Goods* test_good){
 	}
 }
 
-//Òåñò íà ïåðåãðóçêó äåêðåìåíòà
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã¯Ã¥Ã°Ã¥Ã£Ã°Ã³Ã§ÃªÃ³ Ã¤Ã¥ÃªÃ°Ã¥Ã¬Ã¥Ã­Ã²Ã 
 
 bool Tests::overload_decrement_date(Goods* test_good){
 	test_good->setDate(25,5,2001);
@@ -287,7 +287,7 @@ bool Tests::overload_decrement_date(Goods* test_good){
 	}
 }
 
-//Òåñò íà ïåðåãðóçêó ïðèñâîåíèÿ
+//Ã’Ã¥Ã±Ã² Ã­Ã  Ã¯Ã¥Ã°Ã¥Ã£Ã°Ã³Ã§ÃªÃ³ Ã¯Ã°Ã¨Ã±Ã¢Ã®Ã¥Ã­Ã¨Ã¿
 
 bool Tests::overload_assignment(Goods* test_good) {
 	test_good->setName("Orange");
