@@ -5,6 +5,9 @@
 #include <iostream>
 #include <fstream>
 #include "Tests.h"
+#include <ctime>
+#include <list> //Подключение STL::list
+#include <set> //Подключение STL::set
 using namespace std;
 
 void test()
@@ -52,10 +55,105 @@ void test()
 	cout << "\nFailed: " << tests.failed;
 	cout << endl;
 }
+
+//Функция бенчмарка Set
+void setTest(){ 
+	cout << endl;
+	set<int> myset; // Задание set для типа данных int
+	int before = clock();
+	cout << "Set insert:" << endl;
+	int size = 100000;
+	int value = 26500;
+	for (int i = 0; i < size; i++)
+	{
+		myset.insert (rand() % size);
+	}
+	cout << "Time: " << clock() - before << endl;
+	cout << "Set find:" << endl;
+	before = clock();
+	std::set<int>::const_iterator found = myset.find(value);
+	if (myset.find(value) != myset.end()) //Поиск значения
+	{
+		cout << *found << endl;
+	}
+	else
+	{
+		cout << "Not found" << endl;
+	}
+	cout << "Time: " << clock() - before << endl;
+	cout << "Set delete:" << endl;
+	before = clock();
+	for (int i = 0; i < size; i++) //Удаление данных из дерева
+	{ 
+		myset.erase(i);
+	}
+	cout << "Time: " << clock() - before << endl;
+	set<Goods*> setGoods; // Задание set для типа данных класса Goods
+	before = clock();
+	cout << "setGoods insert:" << endl;
+	int sizeGood = 10000;
+	Goods* object = new Goods ("Apple", 25, 5, 2001, 10.0, 100);
+	setGoods.insert(object);
+	for (int i = 0; i < sizeGood; i++)
+	{
+		Goods* good = new Goods("111111111", rand(),  rand(),  rand(),  rand(), rand());
+		setGoods.insert(good);
+	}
+	cout << "time: " << clock() - before << endl;
+	cout << "setGoods find:" << endl;
+	Goods* founded = new Goods ("111111111", rand(),  rand(),  rand(),  rand(), rand());
+	before = clock();
+	auto itt = setGoods.find(object);
+	cout << (*itt)->strObj() << endl;
+	cout << "Time " << clock() - before << endl;
+	cout << "Multimap delete" << endl;
+	before = clock();
+	setGoods.clear();
+	cout << "Time " << clock() - before << endl;
+}
+
+
+//Функция бенчмарка List
+void listTest()
+{
+	cout << endl;
+	cout << "List input:" << endl;
+	list<int> test; // Задание list для типа данных int
+	int size = 100000;
+	int i = 0;
+	int before = clock();
+	for (; i < size;i++) //Добавление в список элементов в конец
+		test.push_back(i+1);
+	cout << "Time: " << clock() - before << endl;
+	cout << "List delete:" << endl;
+	before = clock();
+	while (!test.empty()) //Удаление данных из списка
+	{
+		test.pop_back();
+	}
+	cout << "Time: " << clock() - before << endl;
+	cout << "List Goods input:" << endl;
+	list<Goods> testGoods; // Задание list для типа данных класса Goods
+	int sizeGood = 100000;
+	int ii = 0;
+	before = clock();
+	for (i = 0; i < sizeGood;i++)  {
+		testGoods.push_back(Goods("1111111", sizeGood, sizeGood, sizeGood, sizeGood, sizeGood));
+	}
+	cout << "Time: " << clock() - before << endl;
+	cout << "List Goods delete:" << endl;
+	before = clock();
+	while (!testGoods.empty()) {
+		testGoods.pop_back();
+	}
+	cout << "Time: " << clock() - before << endl;
+}
+
 int main() {
 	setlocale(LC_ALL, "RUS");
 	test();
-
+	listTest();
+	setTest();
 	cin.get();
 	cin.get();
 }
